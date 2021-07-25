@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 :root {
   --Darkcyan: hsl(185, 75%, 39%);
   --Verydarkdesaturatedblue: hsl(229, 23%, 23%);
@@ -15,6 +17,7 @@ html,
 body {
   height: 100%;
   background: var(--Darkcyan);
+font-family: 'Kumbh Sans', sans-serif;
 }
 .attribution {
     margin-top: 5rem;
@@ -36,129 +39,141 @@ section.main-background {
     background-size: 978px 978px, 978px 978px;
     background-attachment: fixed,fixed;
     padding: 5%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    place-content: center;
 }
 
 div.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 350px;
-    height: 380px;
-    background: #fff;
-    border-radius: 1rem;
-    transition: all 0.5s;
-}
-
-div.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-div.card-top {
-    width: 100%;
-    height: 35%;
-    padding: 3rem;
-    background: url(images/bg-pattern-card.svg);
-    background-size: cover;
-    border-radius: 1rem 1rem 0 0;
-    position:relative;
-}
-div.card-bottom {
-    width: 100%;
-    align-items: center;
-}
-
-div.img-container img {
-    /* width: 100%; */
-    border-radius: 50%;
-}
-div.img-container{
-    width: 6.5rem;
-    height: 6.5rem;
-    background: rgb(255, 255, 255);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: -3.25rem;
-    right: 50%;
-    transform: translate(50%,-10%);
-}
-
-div.card-description {
-    margin-top: 3rem;
     text-align: center;
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: 1fr;
+    border-radius: 0.65rem;
+    background: var(--Darkcyan);
+    box-shadow: 1px 2px 5px var(--Darkgrayishblue);
+    transition: all 0.6s ease;
+}
+div.card:hover {
+  transform:scale(1.039);
+    box-shadow: 2px 4px 10px var(--Darkgrayishblue);
+}
+
+div.card-top{
+  height: 7.8rem;
+  border-radius: 0.65rem 0.65rem 0 0;
+  background-image: url(images/bg-pattern-card.svg);
+  background-repeat: repeat;
+  background-position: center;
+  position: relative;
+  padding: 2rem;
+}
+
+div.img-container {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+div.img-container img{
+  background: #fff;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+div.card-bottom{
+  background: #fff;
+  border-radius: 0 0 0.65rem 0.65rem;
+}
+
+div.card-description{
+  padding: 1rem 2rem;
+  margin: 1.45rem;
 }
 
 p.profile-name{
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--Verydarkdesaturatedblue);
+  color: var(--Verydarkdesaturatedblue);
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+p.profile-name span{
+  color: var(--Darkgray);
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 0.35rem;
 }
 
-p.profile-name span {
-    margin-left: 0.7rem;
+p.profile-location {
+  margin: 0.75rem 0;
+  color: var(--Darkgray);
+  font-size: 0.9rem;
 }
 
-p.profile-name span,
-p.profile-location,
-p.followers-name,
-p.likes-name,
-p.photos-name{
-    color: var(--Darkgray);
-}
-
-p.profile-location{
-    margin: 1rem 0;
-    font-size: 1.1rem;
-}
-
-p.followers-figure,
-p.likes-figure,
-p.photos-figure {
-    color: var(--Verydarkdesaturatedblue);
-    font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-div.card-stats{
-    margin: 1rem 0 2rem 0;
-    padding: 1rem 5%;
-    border-top: 1px solid var(--Darkgrayishblue);
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around; 
+div.card-stats {
+  border-top: 0.5px solid var(--Darkgray);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.followers,
 div.likes,
 div.photos {
-    text-align: center;
-    padding: 1rem;
+  margin: 0.5rem 1.5rem;
+  /* padding: 0.5rem; */
 }
 
+p.followers-figure,
+p.likes-figure,
+p.photos-figure {
+  font-weight: 700;
+  color: var(--Verydarkdesaturatedblue);
+}
+
+p.followers-name,
+p.likes-name,
+p.photos-name {
+  font-weight: 400;
+  color: var(--Darkgray);
+  font-size: 0.69rem;
+  margin: 0.7rem 0;
+}
+
+
+
 @media screen and (max-width:425px){
-    div.card {
+   div.card {
         width: 300px;
     }
-    section.main-background {
-       
+    section.main-background { 
         background-position: -20% -40%, 130% 110%;
         background-repeat: no-repeat, no-repeat;
         background-size: 238px 238px, 238px 238px;
-        
-    }
+        display: grid;
+        place-content: center;
+    } 
     
-    div.card{
-        display:block;
-    }
+    
 }
+
+
 @media screen and (max-width:320px){
-    div.card {
+     div.card {
         width: 250px;
     }
+    section.main-background { 
+      background-position: -20% -40%, 130% 110%;
+      background-repeat: no-repeat, no-repeat;
+      background-size: 238px 238px, 238px 238px;
+  } 
 }

@@ -18,7 +18,9 @@ body {
   height: 100%;
   background: var(--Darkcyan);
   font-family: "Kumbh Sans", sans-serif;
+  max-width: 1440px;
 }
+
 .attribution {
   margin-top: 5rem;
   background: var(--Darkcyan);
@@ -37,9 +39,8 @@ body {
   background-size: auto 100vh;
 } */
 
-div.main-background {
+main.main-background {
   height: 100vh;
-
   background: url(./images/bg-pattern-top.svg) calc((50vw - 100vh)) -50vh no-repeat,
     url(./images/bg-pattern-bottom.svg) 50vw 50vh no-repeat;
   background-size: auto 100vh;
@@ -105,13 +106,13 @@ div.card-description {
   margin: 1.45rem 0 0;
 }
 
-p.profile-name {
+h1.profile-name {
   color: var(--Verydarkdesaturatedblue);
   font-size: 18px;
   font-weight: 700;
   margin-top: 1.5rem;
 }
-p.profile-name span {
+h1.profile-name span {
   color: var(--Darkgray);
   font-size: 18px;
   font-weight: 400;
@@ -120,6 +121,7 @@ p.profile-name span {
 
 p.profile-location {
   margin: 0.75rem 0;
+  font-weight: 400;
   color: var(--Darkgray);
   font-size: 0.9rem;
 }

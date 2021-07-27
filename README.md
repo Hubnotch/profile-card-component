@@ -28,8 +28,8 @@ This is my solution to the [Profile card component challenge on Frontend Mentor]
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Hubnotch/profile-card-component)
-- Live Site URL: [Add live site URL here](https://frontend-profile-card-component.netlify.app/)
+- Solution URL: [solution URL](https://github.com/Hubnotch/profile-card-component)
+- Live Site URL: [live link](https://frontend-profile-card-component.netlify.app/)
 
 
 

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 :root {
   --Darkcyan: hsl(185, 75%, 39%);
   --Verydarkdesaturatedblue: hsl(229, 23%, 23%);
   --Darkgrayishblue: hsl(227, 10%, 46%);
-  --Darkgray: hsl(0, 0%, 59%);
+  --Darkgray: hsla(0, 0%, 59%, 0.438);
 }
 
 * {
@@ -17,10 +17,10 @@ html,
 body {
   height: 100%;
   background: var(--Darkcyan);
-font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 .attribution {
-    margin-top: 5rem;
+  margin-top: 5rem;
   background: var(--Darkcyan);
   font-size: 11px;
   text-align: center;
@@ -28,37 +28,42 @@ font-family: 'Kumbh Sans', sans-serif;
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+/* .main {
+  height: 100vh;
+  I discovered some calc magic to make the top svg responsive. I'm pumped at the discovery but there's probably a more efficient way to skip media queries. 
+  background: url(./images/bg-pattern-top.svg) calc((50vw - 100vh)) -50vh no-repeat,
+    url(./images/bg-pattern-bottom.svg) 50vw 50vh no-repeat var(--dark-cyan);
+  background-size: auto 100vh;
+} */
+
 section.main-background {
-    max-width: 1440px;
-    background: var(--Darkcyan);
-    height: 100vh;
-    background-image: url(/images/bg-pattern-top.svg),
-    url(/images/bg-pattern-bottom.svg);
-    background-position: -100% 160%, 170% -90%;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 978px 978px, 978px 978px;
-    background-attachment: fixed,fixed;
-    padding: 5%;
-    display: grid;
-    place-content: center;
+  height: 100vh;
+
+  background: url(./images/bg-pattern-top.svg) calc((50vw - 100vh)) -50vh no-repeat,
+    url(./images/bg-pattern-bottom.svg) 50vw 50vh no-repeat;
+  background-size: auto 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.card {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 350px;
-    grid-template-rows: 1fr;
-    border-radius: 0.65rem;
-    background: var(--Darkcyan);
-    box-shadow: 1px 2px 5px var(--Darkgrayishblue);
-    transition: all 0.6s ease;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 1fr;
+  border-radius: 0.65rem;
+  background: var(--Darkcyan);
+  box-shadow: 1px 2px 5px var(--Darkgrayishblue);
+  transition: all 0.6s ease;
 }
 div.card:hover {
-  transform:scale(1.039);
-    box-shadow: 2px 4px 10px var(--Darkgrayishblue);
+  transform: scale(1.039);
+  box-shadow: 2px 4px 10px var(--Darkgrayishblue);
 }
 
-div.card-top{
+div.card-top {
   height: 7.8rem;
   border-radius: 0.65rem 0.65rem 0 0;
   background-image: url(images/bg-pattern-card.svg);
@@ -72,40 +77,40 @@ div.img-container {
   background: #fff;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
 }
 
-div.img-container img{
+div.img-container img {
   background: #fff;
   width: 90px;
   height: 90px;
   border-radius: 50%;
 }
 
-div.card-bottom{
+div.card-bottom {
   background: #fff;
   border-radius: 0 0 0.65rem 0.65rem;
 }
 
-div.card-description{
+div.card-description {
   padding: 1rem 2rem;
-  margin: 1.45rem;
+  margin: 1.45rem 0 0;
 }
 
-p.profile-name{
+p.profile-name {
   color: var(--Verydarkdesaturatedblue);
   font-size: 18px;
   font-weight: 700;
   margin-top: 1.5rem;
 }
-p.profile-name span{
+p.profile-name span {
   color: var(--Darkgray);
   font-size: 18px;
   font-weight: 400;
@@ -149,9 +154,7 @@ p.photos-name {
   margin: 0.7rem 0;
 }
 
-
-
-@media screen and (max-width:425px){
+/* @media screen and (max-width:425px){
    div.card {
         width: 300px;
     }
@@ -176,4 +179,4 @@ p.photos-name {
       background-repeat: no-repeat, no-repeat;
       background-size: 238px 238px, 238px 238px;
   } 
-}
+} */
